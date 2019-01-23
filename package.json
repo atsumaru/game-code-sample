@@ -1,0 +1,17 @@
+{
+  "name": "game-code-sample",
+  "version": "0.0.0-development",
+  "description": "RPGアツマールに投稿可能な、ゲーム制作ツールに依存しないコードのサンプルです。",
+  "license": "MIT",
+  "scripts": {
+    "compile": "if [ -e dist ]; then rm -r dist; fi && parcel build src/index.html --public-url ./",
+    "zip": "npm run compile && if [ -e dist.zip ]; then rm dist.zip; fi && bestzip dist.zip dist"
+  },
+  "devDependencies": {
+    "bestzip": "^2.1.2",
+    "parcel-bundler": "^1.11.0",
+    "tslib": "^1.9.3",
+    "typescript": "^3.2.2",
+    "@atsumaru/api-types": "github:atsumaru/api-types"
+  }
+}
