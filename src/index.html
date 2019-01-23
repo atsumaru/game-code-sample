@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <!-- index.htmlファイルにはRPGアツマール投稿時、head下にatsumaru.jsをsrcとするscript要素が挿入されます -->
+    </head>
+    <body>
+        <!-- ページ全体サイズのcanvas要素を置くのが一般的ですが、説明のために通常のHTML要素を使用します -->
+        <h3>サンプル</h3>
+        <dl>
+            <dt>
+                コメント:
+                <table>
+                    <caption>現在のgposパラメータ</caption>
+                    <thead>
+                        <tr>
+                            <th>scene</th>
+                            <th colspan="3">contextfactor</th>
+                            <th>minorcontext</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="scene">__title</td>
+                            <td id="contextfactor-pre-pre"></td>
+                            <td id="contextfactor-pre"></td>
+                            <td id="contextfactor"></td>
+                            <td id="minorcontext">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <select id="scene-select">
+                    <option value="__title">タイトル</option>
+                    <option value="scene-a">シーンA</option>
+                    <option value="scene-b">シーンB</option>
+                </select>
+                <button id="contextfactor-button-a">ファクターA</button>
+                <button id="contextfactor-button-b">ファクターB</button>
+                <button id="contextfactor-button-c">ファクターC</button>
+                <button id="minorcontext-button">minorcontextを+1する</button>
+            </dt>
+            <dd>
+                コメント用のゲームポジションを切り替えます。
+                scene, 最新3件のcontextfactor, minorcontext の3つのパラメーターでゲーム状態を表現（「gpos」と呼びます）し、表示されるコメントが切り替わります。
+                実際のゲームではこれらの値とゲーム内の値を適切に対応させることで、場面ごとに流れるコメントを変更することができます。
+            </dd>
+            <dt>コントローラー入力: <span id="controller-state"></span></dt>
+            <dd>バーチャルコントローラーからの入力を表示します。バーチャルコントローラーを実際に操作してみてください。</dd>
+            <dt>
+                サーバーセーブ: 
+                <input type="text" name="text-input" id="text-input" placeholder="保存される文字列" maxlength="100">
+                <button id="save">保存</button>
+                <button id="load">読み込み</button>
+            </dt>
+            <dd>キー"system"に対して文字列の保存または読み込みをします。</dd>
+        </dl>
+        <script src="main.ts"></script>
+    </body>
+</html>
