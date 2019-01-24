@@ -1,4 +1,5 @@
 import { controllerState, saveButton, textInput, loadButton, sceneSelect, scene, contextfactors, contextfactorButtons, minorcontextButton, minorcontext } from "./constant";
+import {RPGAtsumaruApi, AtsumaruApiError} from "@atsumaru/api-types";
 
 function withAtsumaru(fn: (atsumaru: RPGAtsumaruApi) => void) {
     const atsumaru = window.RPGAtsumaru;
